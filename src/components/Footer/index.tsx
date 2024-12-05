@@ -3,27 +3,34 @@ import { DefaultFooter } from '@ant-design/pro-components';
 import React from 'react';
 
 const Footer: React.FC = () => {
+  const defaultMessage = 'lzhphantom 出品';
+  const currentYear = new Date().getFullYear();
   return (
     <DefaultFooter
       style={{
         background: 'none',
       }}
+      copyright={`${currentYear} ${defaultMessage}`}
       links={[
         {
-          key: 'Ant Design Pro',
-          title: 'Ant Design Pro',
+          key: 'lzhphantom user center',
+          title: '用户中心',
           href: 'https://pro.ant.design',
           blankTarget: true,
         },
         {
           key: 'github',
-          title: <GithubOutlined />,
-          href: 'https://github.com/ant-design/ant-design-pro',
+          title: (
+            <>
+              <GithubOutlined /> lzhphantom Github
+            </>
+          ),
+          href: 'https://github.com/lzhphantom',
           blankTarget: true,
         },
         {
-          key: 'Ant Design',
-          title: 'Ant Design',
+          key: 'lzhphantom cloud',
+          title: '微服务',
           href: 'https://ant.design',
           blankTarget: true,
         },

@@ -2,25 +2,23 @@
 /* eslint-disable */
 
 declare namespace API {
+  /**
+   * 通用返回对象
+   */
+  type BaseResponse<T> = {
+    code: number;
+    data: T;
+    message: string;
+  };
   type CurrentUser = {
-    name?: string;
-    avatar?: string;
-    userid?: string;
+    id?: number;
+    username?: string;
+    avatarUrl?: string;
     email?: string;
-    signature?: string;
-    title?: string;
-    group?: string;
-    tags?: { key?: string; label?: string }[];
-    notifyCount?: number;
-    unreadCount?: number;
-    country?: string;
-    access?: string;
-    geographic?: {
-      province?: { label?: string; key?: string };
-      city?: { label?: string; key?: string };
-    };
-    address?: string;
     phone?: string;
+    status?: number;
+    createTime?: Date;
+    role?: number;
   };
 
   type LoginResult = {
@@ -28,6 +26,8 @@ declare namespace API {
     type?: string;
     currentAuthority?: string;
   };
+
+  type RegisterResult = number;
 
   type PageParams = {
     current?: number;
@@ -66,6 +66,13 @@ declare namespace API {
     password?: string;
     autoLogin?: boolean;
     type?: string;
+  };
+
+  type RegisterParams = {
+    username?: string;
+    userAccount?: string;
+    userPassword?: string;
+    checkPassword?: string;
   };
 
   type ErrorResponse = {
